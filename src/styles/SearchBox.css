@@ -1,0 +1,18 @@
+.SearchBox {
+  display: flex;
+  justify-content: space-evenly;
+  width: 50vw;
+  height: 20vh;
+}
+
+.SearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
