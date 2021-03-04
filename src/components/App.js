@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "../styles/App.css";
-import SearchBox from "./SearchBox";
 import { searchRepos } from "../api/GitApi";
+import SearchBox from "./SearchBox";
+import RepoList from "./RepoList";
 
 function App() {
   const [sort, setSort] = useState("Best Match");
@@ -20,7 +21,7 @@ function App() {
         setQuery={setQuery}
         searchHandler={searchHandler}
       />
-      {/* <RepoList /> */}
+      <RepoList repos={repos} />
     </div>
   );
 }

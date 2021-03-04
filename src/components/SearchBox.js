@@ -1,4 +1,4 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Col } from "react-bootstrap";
 import "../styles/SearchBox.css";
 
 function SearchBox(props) {
@@ -6,16 +6,18 @@ function SearchBox(props) {
 
   return (
     <div className="SearchBox">
-      <div className="SearchForm">
-        <Form>
-          <Form.Group>
+      <Form>
+        <Form.Row>
+          <Form.Group as={Col}>
+            <Form.Label>Search: </Form.Label>
             <Form.Control
               type="text"
               placeholder="Search..."
               onChange={(e) => setQuery(e.target.value)}
             />
           </Form.Group>
-          <Form.Group>
+          <Form.Group as={Col}>
+            <Form.Label>Sort By: </Form.Label>
             <Form.Control
               as="select"
               defaultValue="Best Match"
@@ -25,14 +27,12 @@ function SearchBox(props) {
               <option>Stars</option>
             </Form.Control>
           </Form.Group>
-        </Form>
-      </div>
+        </Form.Row>
+      </Form>
 
-      <div className="SearchButton">
-        <Button variant="outline-primary" onClick={() => searchHandler()}>
-          Go
-        </Button>
-      </div>
+      <Button variant="outline-primary" onClick={() => searchHandler()}>
+        Go
+      </Button>
     </div>
   );
 }
