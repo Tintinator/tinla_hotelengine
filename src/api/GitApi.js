@@ -18,7 +18,5 @@ export const searchRepos = async function searchRepos(
     sort: sort,
   });
 
-  console.log(response);
-
   return response;
 };
