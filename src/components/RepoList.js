@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Table } from "react-bootstrap";
 import "../styles/RepoList.css";
 
@@ -8,7 +9,16 @@ function RepoList(props) {
     const { id, full_name, size, stargazers_count, language } = e;
     return (
       <tr key={id}>
-        <td>{id}</td>
+        <td>
+          <Link
+            to={{
+              pathname: "/details",
+              state: { e },
+            }}
+          >
+            {id}
+          </Link>
+        </td>
         <td>{full_name}</td>
         <td>{size}</td>
         <td>{stargazers_count}</td>
@@ -16,6 +26,7 @@ function RepoList(props) {
       </tr>
     );
   });
+
   return (
     <div>
       <Table striped bordered hover>

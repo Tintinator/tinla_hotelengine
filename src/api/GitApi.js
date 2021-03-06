@@ -18,5 +18,7 @@ export const searchRepos = async function searchRepos(
     sort: sort,
   });
 
+  console.log(`Encoded Query: ${encodedQuery} with Sort: ${sort}`);
+
   return response;
 };

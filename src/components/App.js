@@ -1,27 +1,21 @@
-import React, { useState } from "react";
-import "../styles/App.css";
-import { searchRepos } from "../api/GitApi";
-import SearchBox from "./SearchBox";
-import RepoList from "./RepoList";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Home from "./Home";
+import Details from "./Details";
 
 function App() {
-  const [sort, setSort] = useState("Best Match");
-  const [query, setQuery] = useState("");
-  const [repos, setRepos] = useState([]);
-
-  async function searchHandler() {
-    const response = await searchRepos(query, sort);
-    setRepos(response.data);
-  }
-
   return (
-    <div className="App">
-      <SearchBox
-        setSort={setSort}
-        setQuery={setQuery}
-        searchHandler={searchHandler}
-      />
-      <RepoList repos={repos} />
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/details">
+            <Details />
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }
