@@ -1,5 +1,14 @@
+import RepoCard from "../components/RepoCard";
+import "../styles/Details.css";
+
 function Details(props) {
-  return <div>hi</div>;
+  const { repo } = props.location.state;
+
+  return (
+    <div className="Details">
+      <RepoCard repo={repo} />
+    </div>
+  );
 }
 
 export default Details;

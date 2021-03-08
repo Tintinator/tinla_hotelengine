@@ -12,7 +12,7 @@ function RepoList(props) {
           <Link
             to={{
               pathname: "/details",
-              state: { repoDetail: e },
+              state: { repo: e },
             }}
           >
             {id}

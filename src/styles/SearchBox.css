@@ -5,14 +5,3 @@
   width: 20vw;
   height: 20vh;
 }
-
-.SearchForm {
-  display: flex;
-  justify-content: center;
-}
-
-.SearchButton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
