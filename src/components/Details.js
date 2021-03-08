@@ -1,5 +1,5 @@
-function Details() {
-  return <div>route works</div>;
+function Details(props) {
+  return <div>hi</div>;
 }
 
 export default Details;

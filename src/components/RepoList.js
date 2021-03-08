@@ -4,8 +4,7 @@ import "../styles/RepoList.css";
 
 function RepoList(props) {
   const { repos } = props;
-  const items = repos.items ? repos.items : [];
-  const rows = items.map((e) => {
+  const rows = repos.map((e) => {
     const { id, full_name, size, stargazers_count, language } = e;
     return (
       <tr key={id}>
@@ -13,7 +12,7 @@ function RepoList(props) {
           <Link
             to={{
               pathname: "/details",
-              state: { e },
+              state: { repoDetail: e },
             }}
           >
             {id}

@@ -9,30 +9,29 @@ function SearchBox(props) {
       <Form>
         <Form.Row>
           <Form.Group as={Col}>
-            <Form.Label>Search: </Form.Label>
             <Form.Control
               type="text"
-              placeholder="Search..."
+              placeholder="Search Repo..."
               onChange={(e) => setQuery(e.target.value)}
             />
           </Form.Group>
           <Form.Group as={Col}>
-            <Form.Label>Sort By: </Form.Label>
             <Form.Control
               as="select"
-              defaultValue="Best Match"
+              defaultValue="best match"
               onChange={(e) => setSort(e.target.value)}
             >
-              <option>Best Match</option>
-              <option>Stars</option>
+              <option>best match</option>
+              <option>stars</option>
             </Form.Control>
           </Form.Group>
+          <div>
+            <Button variant="outline-primary" onClick={() => searchHandler()}>
+              Go
+            </Button>
+          </div>
         </Form.Row>
       </Form>
-
-      <Button variant="outline-primary" onClick={() => searchHandler()}>
-        Go
-      </Button>
     </div>
   );
 }
